@@ -160,8 +160,35 @@ interface AuthForm{
     }
  }
  console.log(loginForm);
-
  
+
+
+
+ //*/************************************************************************************************************ */
+
+ //TYPES VS INTERFACES
+
+
+type text=string;
+type stringArr=string[];
+// using types it i s easy to define a type rather than using an interface
+
+interface NumberArray{
+    [index:number]:number
+}
+
+type pair= [number,number];
+
+type triplets =[number, number,number];
+
+interface PairInterface{
+    first : number,
+    second:number
+}
+
+
+
+
 
 
 
