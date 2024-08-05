@@ -186,8 +186,33 @@ interface PairInterface{
     second:number
 }
 
+//********************************************************************************************************** */
 
 
+//Unions in ts
+
+
+
+type unionOfStrNum=number|string;
+
+// interface equivalend of above type
+
+
+
+interface ComplexNumber{
+    real:number,
+    imaginary:number
+}
+
+interface ComplexNumber{
+    add:(num:number)=> void
+}
+/////////////////////////////////OR/////////////////////////////////////////
+interface ComplexNumber{
+    real:number,
+    imaginary:number,
+    add:(num:number)=> void
+}
 
 
 
