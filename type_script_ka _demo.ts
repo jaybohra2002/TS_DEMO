@@ -132,6 +132,37 @@ const result :Details={
 }
 console.log(result);
 
+// *******************************************************************************************************
+
+
+// Simple auth form 
+ 
+
+
+interface AuthForm{
+    name: string,
+    message:string,
+    onLogin: (e:any) => void
+
+    ,
+    onSubmit : (e:any)=> void
+
+    
+}
+ const loginForm :AuthForm= {
+    name:"Jay",
+    message:"Submitted the form",
+    onLogin: (e)=>{
+        //some IMPLEMENTATION
+    },
+    onSubmit:(e)=>{
+        //some inplementation
+    }
+ }
+ console.log(loginForm);
+
+ 
+
 
 
 
