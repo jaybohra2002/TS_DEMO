@@ -10,7 +10,7 @@ let arr:[number , string]=[1,"2"]
   */
  interface Product{
     name:string,
-    price:number,
+    
     brand:string,
     display():void
  }
@@ -25,7 +25,7 @@ let arr:[number , string]=[1,"2"]
     }
  }
  let p=new Car("Santro");
- let b :Product={
+ let b : Product ={
     name:"Iphone",
     price:100000,
     brand:"Apple",
@@ -130,7 +130,7 @@ const result :Details={
     marks:45,
 
 }
-console.log(result);
+//console.log(result);
 
 // *******************************************************************************************************
 
@@ -159,7 +159,7 @@ interface AuthForm{
         //some inplementation
     }
  }
- console.log(loginForm);
+ //console.log(loginForm);
  
 
 
@@ -213,6 +213,77 @@ interface ComplexNumber{
     imaginary:number,
     add:(num:number)=> void
 }
+
+//************************************************************************************* */
+
+//Classees in TypeScript
+
+
+class Product {
+    name: string;
+    private price: number ;
+    readonly category:string;
+
+    constructor(name: string,category:string, price: number) {
+        this.name = name;
+        this.price = price;
+        this.category=category;
+    }
+
+    display(): void {
+        //console.log("product name is ", this.name, "and the price of it is ", this.price );
+    }
+    setPrice(p:number) : void{
+        if(p<=0) return ;
+        this.price=p;
+    }
+}
+
+const p1 = new Product("iPhone","electronics",5);
+//p1.display();
+//console.log(p1);
+p1.setPrice(-500000);
+p1.display();
+
+
+/**
+ * Class to write the complex numbers
+ * where we can add and multiply the complex numbers
+ * 
+ */
+
+class Complex{
+    private real:number;
+    private imag:number;
+    constructor(real:number,imag:number){
+        this.real=real;
+        this.imag=imag;
+    }
+    display(): void{
+        console.log(`${this.real}+i${this.imag}`);
+    }
+    add(C:Complex):void{
+        this.real+=+C.real;
+        this.imag+=C.imag;
+    }
+    multiply(C:Complex): void{
+        this.real=(this.real*C.real-this.imag*C.imag);
+        this.imag=(this.real*C.imag+this.imag*C.real);
+    }
+}
+let c1:Complex=new Complex(2,30);
+//c1.display();
+let c2:Complex=new Complex(5,2);
+//c1.add(c2);
+//c1.display();
+//c2.display();
+c2.add(c1);
+//c2.display();
+c1.multiply(c2);
+//c1.display();
+
+
+
 
 
 
