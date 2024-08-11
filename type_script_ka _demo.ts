@@ -282,11 +282,107 @@ c2.add(c1);
 c1.multiply(c2);
 //c1.display();
 
+/**
+ * Linera Search
+ */
+
+function linearSearch<T>(array:T[],x:T):[number,T]{
+    for(let i=0;i<array.length;i++){
+        if(array[i]===x) return [i,array[i]];
+    }
+    return [-1,x];
+}
+const array:number[]=[2,8,4,-5,99,5,7];
+//console.log(linearSearch<number>(array,69));
+const strarr:string[]=["abc","def","xyz"];
+//console.log(linearSearch<string>(strarr,""));
 
 
+//Generic Stack In TypeScript
 
 
+class Stack<T>{
+    private arr:T[];
+    constructor(){
+        this.arr=[];
+    }
+    push(x:T):void{
+        this.arr.push(x);
+    }
+    pop():void{
+        this.arr.pop();
 
+    }
+    top():T
+    {
+        return this.arr[arr.length];
+    }
+    display():void{
+        console.log(this.arr);
+    }
+}
+let st  : Stack<number>=new Stack();
+//st.display();
+st.push(3);
+st.push(5);
+st.push(55889);
+st.push(-8);
+st.pop();
+//console.log("Pop Called :",st.top());
+//st.display();
+
+
+/**
+ * LINKED LIST IN ts
+ * 
+ */
+
+
+//*********************************************************************************** */
+
+
+class node<T> {
+    data: T;
+    next: node<T> | null;
+
+    constructor(data: T) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList<T> {
+    head: node<T> | null;
+
+    constructor() {
+        this.head = null;
+    }
+    addAtHead(x:T):void{
+        if(this.head==null){
+            this.head =new node(x);
+            return;
+        }
+        let temp=new node(x);
+        temp.next=this.head;
+        this.head=temp;
+    }
+
+    display(): void {
+        let temp: node<T> | null = this.head;
+        while (temp != null) {
+            console.log(temp.data);
+            temp = temp.next;
+        }
+    }
+}
+let ll =new LinkedList<number>();
+ll.addAtHead(5);
+ll.addAtHead(6);
+ll.addAtHead(7);
+ll.addAtHead(8);
+ll.addAtHead(9);
+ll.addAtHead(10);
+ll.display();
 
 
 
